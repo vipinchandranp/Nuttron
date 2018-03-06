@@ -1,0 +1,6 @@
+package com.fd.clientmgmt.dao.util;
+
+public enum JoinType {
+
+	FETCH, JOIN;
+}

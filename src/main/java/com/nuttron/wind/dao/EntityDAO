@@ -1,0 +1,15 @@
+package com.nuttron.quasar.dao;
+
+import java.util.List;
+
+public interface EntityDAO {
+
+	@SuppressWarnings("rawtypes")
+	public List getEntity(FilterNode filterNode) throws Exception;
+	
+	public FilterNode getFilterNodeFromEntity(Object entityObject,Object parentEntityObject,FilterNode childFilterNode) throws Exception;
+	
+	@SuppressWarnings("rawtypes")
+	public List getEntity(Object entityObject) throws Exception;
+	
+}

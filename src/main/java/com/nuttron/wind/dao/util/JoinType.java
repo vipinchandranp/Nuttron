@@ -1,5 +1,4 @@
-package com.fd.clientmgmt.dao.util;
-
+package com.nuttron.wind.dao.util;
 public enum JoinType {
 
 	FETCH, JOIN;

@@ -1,0 +1,19 @@
+{
+	"${tablename}": "A",
+	"${props}": [
+		{
+			"${prop}": {
+				"${name}": "aId",
+				"${type}": "Integer",
+				"${value}": "100"
+			}
+		},
+		{
+			"${prop}": {
+				"${name}": "aValue",
+				"${type}": "String",
+				"${value}": "aValue"
+			}
+		}
+	]
+}

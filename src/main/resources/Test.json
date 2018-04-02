@@ -1,0 +1,147 @@
+{
+	"${tablename}": "root",
+	"${props}": [
+		{
+			"${prop}": {
+				"${name}": "prop1name",
+				"${type}": "prop1type",
+				"${value}": "prop1value"
+			}
+		},
+		{
+			"${prop}": {
+				"${name}": "prop2name",
+				"${type}": "prop2type",
+				"${value}": "prop2value"
+			}
+		},
+		{
+			"${prop}": {
+				"${name}": "prop2name",
+				"${type}": "prop2type",
+				"${value}": "prop2value"
+			}
+		}
+	],
+	"${peers}": [
+		{
+			"${tablename}": "peer1",
+			"${props}": [
+				{
+					"${prop}": {
+						"${name}": "prop1name",
+						"${type}": "prop1type",
+						"${value}": "prop1value"
+					}
+				},
+				{
+					"${prop}": {
+						"${name}": "prop2name",
+						"${type}": "prop2type",
+						"${value}": "prop2value"
+					}
+				},
+				{
+					"${prop}": {
+						"${name}": "prop2name",
+						"${type}": "prop2type",
+						"${value}": "prop2value"
+					}
+				}
+			],
+			"${children}": [
+				{
+					"${child}": {
+						"${tablename}": "test",
+						"${props}": [
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3value"
+								}
+							},
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3value"
+								}
+							},
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3type"
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"${tablename}": "peer2",
+			"${props}": [
+				{
+					"${child}": {
+						"${tablename}": "test",
+						"${props}": [
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3value"
+								}
+							},
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3value"
+								}
+							},
+							{
+								"${prop}": {
+									"${name}": "prop1name",
+									"${type}": "prop2type",
+									"${value}": "prop3type"
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"${children}": [
+		{
+			"${child}": {
+				"${tablename}": "test",
+				"${props}": [
+					{
+						"${prop}": {
+							"${name}": "prop1name",
+							"${type}": "prop2type",
+							"${value}": "prop3value"
+						}
+					},
+					{
+						"${prop}": {
+							"${name}": "prop1name",
+							"${type}": "prop2type",
+							"${value}": "prop3value"
+						}
+					},
+					{
+						"${prop}": {
+							"${name}": "prop1name",
+							"${type}": "prop2type",
+							"${value}": "prop3type"
+						}
+					}
+				]
+			}
+		}
+	]
+}

@@ -10,13 +10,6 @@ import java.util.Map;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.Metamodel;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 
 import com.nuttron.wind.util.FileUtils;
 import com.nuttron.wind.util.PojoGenerator;
@@ -25,7 +18,7 @@ import com.nuttron.wind.util.RuntimeAnnotations;
 import javassist.CannotCompileException;
 import javassist.NotFoundException;
 
-public class JsonParserImpl {
+public class EclipseLinkMain {
 
 	public static void main(String[] args)
 			throws NotFoundException, CannotCompileException, InstantiationException, IllegalAccessException,
@@ -54,9 +47,15 @@ public class JsonParserImpl {
 
 		Class<?> clazz = PojoGenerator.generate("com.nuttron.wind.EntityMain", props);
 
-		
+		Map<String, Object> valuesMap = new HashMap<>();
+		valuesMap.put("name", "Entity");
+		RuntimeAnnotations.putAnnotation(clazz, Entity.class, new HashMap<>());
+		RuntimeAnnotations.putAnnotation(clazz, org.hibernate.annotations.DynamicUpdate.class, new HashMap<>());
+		RuntimeAnnotations.putAnnotation(clazz, org.hibernate.annotations.Table.class, valuesMap);
+
 		System.out.println("Entity annotation after:" + clazz.getAnnotation(Entity.class));
-		System.out.println("Entity annotation after:" + clazz.getAnnotation(org.hibernate.annotations.DynamicUpdate.class));
+		System.out.println(
+				"Entity annotation after:" + clazz.getAnnotation(org.hibernate.annotations.DynamicUpdate.class));
 		System.out.println("Entity annotation after:" + clazz.getAnnotation(org.hibernate.annotations.Table.class));
 
 		for (final Method method : clazz.getDeclaredMethods()) {
@@ -92,18 +91,18 @@ public class JsonParserImpl {
 
 		System.out.println(result);
 
-		EntityManager em = Persistence.createEntityManagerFactory("hibernate").createEntityManager();
-		em.persist(obj);
-		
-		/*Configuration configuration = new Configuration().configure();
-		configuration.addClass(clazz);
-		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties());
-		SessionFactory factory = configuration.buildSessionFactory(builder.build());
-		Session session = factory.openSession();
-		session.save(obj);
-		session.getTransaction().commit();
-		session.close();*/
+		//EntityManager em = Persistence.createEntityManagerFactory("eclipselink").createEntityManager();
+		//em.persist(obj);
+
+		/*
+		 * Configuration configuration = new Configuration().configure();
+		 * configuration.addClass(clazz); StandardServiceRegistryBuilder builder = new
+		 * StandardServiceRegistryBuilder()
+		 * .applySettings(configuration.getProperties()); SessionFactory factory =
+		 * configuration.buildSessionFactory(builder.build()); Session session =
+		 * factory.openSession(); session.save(obj); session.getTransaction().commit();
+		 * session.close();
+		 */
 		/*
 		 * A a = new A(); a.setAValue("fdsd"); em.persist(a);
 		 */

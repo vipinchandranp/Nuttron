@@ -7,11 +7,12 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * The persistent class for the A database table.
@@ -23,7 +24,8 @@ public class A implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GenericGenerator(name="kaugen" , strategy="increment")
+	@GeneratedValue(generator="kaugen")
 	@Column(name = "A_ID")
 	private Integer aId;
 

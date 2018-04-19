@@ -43,13 +43,13 @@ public class MainTest {
 		em.flush();
 		em.close();
 		tm.commit();
-
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+dinaId);
 		// Retrieve your entities the way you are used to in plain JPA
 		tm.begin();
 		logger.info("About to retrieve dog and breed");
 		em = emf.createEntityManager();
 		dina = em.find(Dog.class, dinaId);
-		logger.info("Found dog %s of breed %s", dina.getName(), dina.getBreed().getName());
+		logger.info("Found dog "+dina.getName()+" of breed " + dina.getBreed().getName());
 		em.flush();
 		em.close();
 		tm.commit();

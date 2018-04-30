@@ -1,4 +1,5 @@
-package com.nuttron.quasar.dao;
+package com.nuttron.wind.dao;
+
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -21,6 +22,9 @@ import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
+
+import com.nuttron.wind.dao.util.FilterNode;
+import com.nuttron.wind.dao.util.Operator;
 
 public class EntityDAOImpl implements EntityDAO {
 	

@@ -14,7 +14,7 @@
 			<property name="hibernate.ogm.datastore.provider" value="infinispan" />
 		</properties>
 	</persistence-unit>
-
+<!-- 
 	<persistence-unit name="hibernate">
 		<class>com.nuttron.wind.EntityMain</class>
 		<properties>
@@ -25,8 +25,8 @@
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-			<!--<property name="hibernate.hbm2ddl.auto" value="validate" /> -->
-			<!-- Configuring Connection Pool -->
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			Configuring Connection Pool
 			<property name="hibernate.c3p0.min_size" value="5" />
 			<property name="hibernate.c3p0.max_size" value="20" />
 			<property name="hibernate.c3p0.timeout" value="500" />
@@ -51,5 +51,5 @@
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
 		</properties>
-	</persistence-unit>
+	</persistence-unit> -->
 </persistence>

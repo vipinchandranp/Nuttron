@@ -44,7 +44,7 @@ public class MainTest {
 		em.flush();
 		em.close();
 		tm.commit();
-
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+dinaId);
 		// Retrieve your entities the way you are used to in plain JPA
 		tm.begin();
 		logger.info("About to retrieve dog and breed");
